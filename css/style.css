@@ -7,8 +7,9 @@
  */
 
 @import url('font-awesome.min.css');
-@import url(http://fonts.googleapis.com/css?family=Dosis:400,600,300);
-@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic');
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,600);
+@import url('http://fonts.googleapis.com/css?family=Lato:300');
+
 
 /*
 	Astral by HTML5 UP
@@ -43,7 +44,7 @@
 
 	body,input,textarea,select
 	{
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Lato', sans-serif;
 		font-weight: 200;
 		/*color: #606060;*/
 		color: #66595C;

@@ -765,7 +765,7 @@
 /* Basic */
 
 	body {
-		background-image: url("images/triangle-tessellation.png"), url("images/bg.jpg");
+		background-image: url("images/ep_naturalblack.png"), url("images/stardust.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		font-family: 'Raleway', sans-serif;

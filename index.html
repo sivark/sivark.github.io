@@ -12,6 +12,7 @@
             --color-paper: var(--bg-light);
             --color-midnight: var(--bg-dark);
         }
+        @variant dark (&:where(.dark, .dark *));
     </style>
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -21,10 +22,10 @@
         }
     </script>
     <style>
-        :root { --bg-light: #f7f2e8; --accent: #8b4513; }
-        .dark { --bg-dark: #121212; --accent: #c29b6d; }
+        :root { --bg-light: #f7f2e8; --bg-dark: #f7f2e8; --accent: #8b4513; }
+        .dark { --bg-light: #121212; --bg-dark: #121212; --accent: #c29b6d; }
 
-        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; transition: background-color 0.4s ease; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; transition: background-color 0.4s ease, color 0.4s ease; }
         
         /* UNIFIED SERIF: EB Garamond for everything editorial */
         h1, h2, h3, h4, .serif-body { font-family: 'EB Garamond', serif; }
@@ -49,7 +50,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-paper dark:bg-midnight text-slate-900 dark:text-zinc-300 selection:bg-accent selection:text-black">
+<body class="bg-paper text-slate-900 dark:text-zinc-300 selection:bg-accent selection:text-black">
 
     <div class="max-w-7xl mx-auto px-8 py-10 md:py-16 content-fade relative">
         <header class="border-b-2 border-slate-900 dark:border-zinc-800 pb-8 mb-12 relative">

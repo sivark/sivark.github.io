@@ -23,7 +23,7 @@
     </script>
     <style>
         :root { --bg-light: #f7f2e8; --bg-dark: #f7f2e8; --accent: #8b4513; }
-        .dark { --bg-light: #121212; --bg-dark: #121212; --accent: #c29b6d; }
+        .dark { --bg-light: #1a1c1e; --bg-dark: #1a1c1e; --accent: #c29b6d; }
 
         body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; transition: background-color 0.4s ease, color 0.4s ease; }
         
@@ -40,7 +40,10 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             filter: grayscale(100%) contrast(250%) brightness(95%); mix-blend-mode: multiply; opacity: 0.2;
         }
-        .dark body::before { filter: grayscale(100%) brightness(1.2) contrast(300%); mix-blend-mode: overlay; opacity: 0.3; }
+        .dark body::before { 
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='fogFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23fogFilter)'/%3E%3C/svg%3E");
+            filter: brightness(1.1) contrast(150%); mix-blend-mode: overlay; opacity: 0.5; 
+        }
         
         .profile-photo { filter: grayscale(100%) contrast(110%) brightness(105%); mix-blend-mode: multiply; opacity: 0.9; }
         .dark .profile-photo { filter: grayscale(100%) contrast(120%) brightness(0.85); mix-blend-mode: luminosity; opacity: 0.8; }
@@ -50,25 +53,25 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-paper text-slate-900 dark:text-zinc-300 selection:bg-accent selection:text-black">
+<body class="bg-paper text-slate-900 dark:text-slate-200 selection:bg-accent selection:text-black">
 
     <div class="max-w-7xl mx-auto px-8 py-10 md:py-16 content-fade relative">
-        <header class="border-b-2 border-slate-900 dark:border-zinc-800 pb-8 mb-12 relative">
+        <header class="border-b-2 border-slate-900 dark:border-slate-700 pb-8 mb-12 relative">
             <div class="flex flex-col lg:flex-row items-start lg:items-center gap-12">
                 <div class="relative w-48 h-48 lg:w-56 lg:h-56">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-slate-200 to-slate-400 dark:from-zinc-800 dark:to-zinc-900 rounded-3xl blur opacity-20"></div>
-                    <img id="render-photo" src="" alt="Siva" class="relative profile-photo w-full h-full object-cover rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-lg">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-slate-200 to-slate-400 dark:from-slate-700 dark:to-slate-800 rounded-3xl blur opacity-20"></div>
+                    <img id="render-photo" src="" alt="Siva" class="relative profile-photo w-full h-full object-cover rounded-3xl border border-slate-200 dark:border-slate-700 shadow-lg">
                 </div>
                 <div class="flex-1">
                     <div class="flex justify-between items-start mb-6">
                         <!-- Name in EB Garamond Medium -->
                         <h1 id="render-name" class="text-6xl md:text-8xl font-medium tracking-tight text-slate-900 dark:text-white"></h1>
-                        <button id="theme-toggle" type="button" class="p-3 rounded-xl border border-slate-200 dark:border-zinc-800 hover:bg-slate-50 dark:hover:bg-zinc-900 transition-all">
+                        <button id="theme-toggle" type="button" class="p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
                             <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 fill-current text-yellow-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-                            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 fill-current text-slate-700 dark:text-zinc-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 fill-current text-slate-700 dark:text-slate-300" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                         </button>
                     </div>
-                    <p id="render-taglines" class="text-xl md:text-2xl text-slate-500 dark:text-zinc-500 font-light italic mb-6"></p>
+                    <p id="render-taglines" class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-light italic mb-6"></p>
                     <div class="flex flex-wrap gap-x-8 gap-y-2 text-[12px] font-bold uppercase tracking-[0.2em]">
                         <a id="link-github" href="#" class="text-accent hover:text-black dark:hover:text-white transition-colors">GitHub</a>
                         <a id="link-twitter" href="#" class="text-accent hover:text-black dark:hover:text-white transition-colors">Twitter</a>
@@ -86,7 +89,7 @@
                     <!-- Title in EB Garamond Bold -->
                     <h2 id="render-focus-title" class="text-4xl md:text-6xl font-bold leading-tight italic text-slate-900 dark:text-white"></h2>
                     <!-- Body in EB Garamond Regular -->
-                    <p id="render-focus-desc" class="serif-body text-2xl md:text-3xl text-slate-600 dark:text-zinc-400 leading-relaxed font-normal"></p>
+                    <p id="render-focus-desc" class="serif-body text-2xl md:text-3xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal"></p>
                 </div>
             </section>
 
@@ -94,32 +97,32 @@
                 <div class="section-label text-accent">Path</div>
                 <div class="space-y-12">
 	    <!--
-                    <div class="grid grid-cols-4 gap-4 pb-12 border-b border-slate-200 dark:border-zinc-900">
+                    <div class="grid grid-cols-4 gap-4 pb-12 border-b border-slate-200 dark:border-slate-800">
                         <div class="text-[11px] font-bold text-accent uppercase tracking-widest pt-3" id="render-current-period"></div>
                         <div class="col-span-3">
                             <h3 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-2" id="render-current-org"></h3>
-                            <p class="text-slate-500 dark:text-zinc-500 text-2xl font-light italic" id="render-current-role"></p>
+                            <p class="text-slate-500 dark:text-slate-400 text-2xl font-light italic" id="render-current-role"></p>
                         </div>
                     </div>
 	    -->
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="text-[11px] font-bold text-slate-400 dark:text-zinc-600 uppercase tracking-widest pt-2">Experience</div>
+                        <div class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest pt-2">Experience</div>
                         <div class="col-span-3 grid sm:grid-cols-2 gap-12" id="render-experience"></div>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
-                        <div class="text-[11px] font-bold text-slate-400 dark:text-zinc-600 uppercase tracking-widest pt-2">Education</div>
+                        <div class="text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest pt-2">Education</div>
                         <div class="col-span-3 grid sm:grid-cols-2 gap-12" id="render-education"></div>
                     </div>
                 </div>
             </section>
 
-            <section class="border-t border-slate-200 dark:border-zinc-800 pt-12">
+            <section class="border-t border-slate-200 dark:border-slate-700 pt-12">
                 <div class="section-label text-accent mb-8">Synthesis & Discourse</div>
                 <div id="render-resources" class="grid md:grid-cols-2 gap-16"></div>
             </section>
         </main>
 
-        <footer class="mt-24 pt-8 border-t border-slate-200 dark:border-zinc-900 text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400 dark:text-zinc-600 text-center">
+        <footer class="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-[11px] uppercase tracking-[0.2em] font-bold text-slate-400 dark:text-slate-500 text-center">
             <div>© 2026 Sivaramakrishnan Swaminathan</div>
         </footer>
     </div>
@@ -145,7 +148,7 @@
             const container = document.getElementById(id);
             items.forEach(item => {
                 const div = document.createElement('div'); div.className = "space-y-2";
-                div.innerHTML = `<div class="text-[11px] font-bold text-accent uppercase tracking-widest">${item.period}</div><h4 class="font-bold text-2xl text-slate-900 dark:text-white">${item.org}</h4><p class="text-slate-500 dark:text-zinc-500 text-lg font-light italic">${item.role}</p>`;
+                div.innerHTML = `<div class="text-[11px] font-bold text-accent uppercase tracking-widest">${item.period}</div><h4 class="font-bold text-2xl text-slate-900 dark:text-white">${item.org}</h4><p class="text-slate-500 dark:text-slate-400 text-lg font-light italic">${item.role}</p>`;
                 container.appendChild(div);
             });
         };
@@ -158,7 +161,7 @@
             let linksHtml = item.links ? `<div class="flex flex-wrap gap-x-8 gap-y-4">
                     ${item.links.map(link => `<a href="${link.url}" class="inline-block border-b-2 border-accent text-[12px] font-bold uppercase tracking-widest pb-1 text-slate-900 dark:text-zinc-200 hover:text-accent transition-all">${link.label} →</a>`).join('')}
                 </div>` : `<a href="${item.url}" class="inline-block border-b border-accent text-[12px] font-bold uppercase tracking-widest pb-1 text-slate-900 dark:text-zinc-200 hover:text-accent transition-all">Explore →</a>`;
-            div.innerHTML = `<h4 class="font-bold text-3xl mb-4 group-hover:text-accent transition-colors text-slate-900 dark:text-white">${item.label}</h4><p class="text-slate-500 dark:text-zinc-400 text-lg leading-relaxed mb-8 font-light">${item.desc}</p>${linksHtml}`;
+            div.innerHTML = `<h4 class="font-bold text-3xl mb-4 group-hover:text-accent transition-colors text-slate-900 dark:text-white">${item.label}</h4><p class="text-slate-500 dark:text-slate-300 text-lg leading-relaxed mb-8 font-light">${item.desc}</p>${linksHtml}`;
             resourceContainer.appendChild(div);
         });
 

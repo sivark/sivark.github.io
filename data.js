@@ -30,12 +30,12 @@ const DATA = {
         period: "2025 — Pres" 
     },*/
     experience: [
-        { org: "Google DeepMind", role: "Research Engineer / Latent World Models", period: "2022 — 2025" },
-        { org: "Vicarious AI", role: "Research Scientist & Team Lead / 3D Vision & Computational Geometry", period: "2017 — 2022" }
+        { org: "Google DeepMind", role: "Research Engineer || In-Context planning & reasoning, Latent World Models", period: "2022 — 2025" },
+        { org: "Vicarious AI", role: "Research Scientist & Team Lead || 3D Vision & Computational Geometry", period: "2017 — 2022" }
     ],
     education: [
-        { org: "UT Austin", role: "PhD / High Energy Theory", period: "2011 — 2017" },
-        { org: "IIT Madras", role: "B.Tech / Electrical Engineering", period: "2007 — 2011" }
+        { org: "UT Austin", role: "PhD || High Energy Theory", period: "2011 — 2017" },
+        { org: "IIT Madras", role: "B.Tech || Electrical Engineering", period: "2007 — 2011" }
     ],
     resources: [
         { 

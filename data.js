@@ -40,8 +40,11 @@ const DATA = {
     resources: [
         { 
             label: "Musings", 
-            desc: "Selected writings, eclectic.", 
-            url: "http://sivark.me/blog/" 
+            desc: "Occasional reflections at the intersection of physical science, computing, and thought.", 
+            links: [
+                { label: "Substack", url: "https://woventhought.substack.com/" },
+                { label: "Selected writings", url: "http://sivark.me/blog/" }
+            ]
         },
         { 
             label: "Teaching & Communication", 
@@ -56,6 +59,7 @@ const DATA = {
     socials: {
         github: "http://github.com/sivark/",
         twitter: "https://twitter.com/ergodicthought",
+        substack: "https://woventhought.substack.com/",
         email: "mailto:siva.rk.sw@gmail.com",
         resume: "Siva_resume.pdf"
     },

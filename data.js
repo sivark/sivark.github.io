@@ -63,6 +63,6 @@ const DATA = {
         email: "mailto:siva.rk.sw@gmail.com",
         resume: "Siva_resume.pdf"
     },
-    photo: "images/me_coorg.jpg",
-    photoPosition: "right" /* "left" or "right" */
+    photo: "images/me_pinkshirt.jpg",
+    photoPosition: "left" /* "left" or "right" */
 };

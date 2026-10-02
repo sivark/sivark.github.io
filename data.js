@@ -8,17 +8,23 @@ const DATA = {
         "AI Engineer",
         "Physicist"
     ],
-    focus: {
+    focus: [
         /* title: "Physical AI for diagnostic/intelligent sensing", */
-	title: "",
         /*
          * description: "I am developing world models that enable agents to reason through the constraints of reality—bridging the gap between abstract planning and physical execution. My current work leverages latent sequence models to provide a robust mechanism for reasoning by analogy."
         description: "To scale our diagnostic capability for seeing inside the human body, we must judiciously marry cutting-edge sensing technology with AI. And package this as an affordable wearable solution, to scale beyond hospitals as a healthcare service delivery bottleneck."
 	description: Package the combination as an affordable wearable experience. Scale past the hospital service-delivery bottleneck for monitoring and diagnostics."
         description: "Marry computationally efficient reasoning based on world-models with cutting-edge sensing technology. Package the combination as an affordable wearable experience. Scale past the hospital service-delivery bottleneck for monitoring and diagnostics."
          */
-        description: "How do we design sensors (perception) for intelligence?" 
-    },
+        {
+            title: "",
+            description: "How should we design sensing and perception for intelligence?"
+        },
+        {
+            title: "",
+            description: "How would healthcare change if medical imaging could track the body continuously?"
+        }
+    ],
     current: { 
         org: "", 
         role: "", 
